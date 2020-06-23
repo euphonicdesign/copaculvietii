@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta property='og:title' content='Copacul Vietii'/>
+    <meta property='og:image' content='https://euphonicdesign.github.io/copaculvietii/images/copacul_vietii_v2.png'/>
+
+    <title>The Tree of Life</title>
+    <link href="styles/style.css?v=1.4" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+      canvas {
+          border:1px solid #d3d3d3;
+          background-color: #f1f1f1;
+      }
+    </style>
+  </head>
+
+  <body onload="startJoc()">
+    <header>
+      <table>
+        <tr>
+          <td>
+            <h1>The Tree of Life</h1>
+          </td>
+          <td>
+            <div class = "linkuri">
+              <a href="#" class = "langSel" onclick="pauzaJoc()" id="pauza">Pause</a>
+              <a href="#" class = "langSel" onclick="restart()">Restart</a>
+              <a href="#" class = "verSel" onclick="schimbareVersiune()" id="versiune">V2</a>
+              <a href="#" class = "langSel" onclick="selectieLimbaEngleza()">En</a>
+              <a href="#" class = "langSel" onclick="selectieLimbaRomana()">Ro</a>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </header>
+    <main>
+      <section>
+      </section>
+    </main>
+    <!--
+    <footer>
+      <p>Cookies enabled website</p>
+    </footer>-->
+    <script src="scripts/simulare.js?version=20"></script>
+  </body>
+</html>
