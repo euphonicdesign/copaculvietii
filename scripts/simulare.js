@@ -1812,7 +1812,9 @@ function actualizareParametriiVersiune(){
 
   if(VERSIUNEA_SELECTATA == VERSIUNEA_1){
       //V1
-      element_versiune.textContent = TEXT_VERSIUNEA_2;
+      if (element_versiune != null){
+          element_versiune.textContent = TEXT_VERSIUNEA_2;
+      }
       //console.log("Versiune Selectata: " + TEXT_VERSIUNEA_1);
       CANVAS_WIDTH = CANVAS_WIDTH_V1;
       CANVAS_HEIGHT = CANVAS_HEIGHT_V1;
@@ -1833,7 +1835,9 @@ function actualizareParametriiVersiune(){
   }
   else{
       //V2
-      element_versiune.textContent = TEXT_VERSIUNEA_1;
+      if (element_versiune != null){
+          element_versiune.textContent = TEXT_VERSIUNEA_1;
+      }
       //console.log("Versiune Selectata: " + TEXT_VERSIUNEA_2);
       CANVAS_WIDTH = CANVAS_WIDTH_V2;
       CANVAS_HEIGHT = CANVAS_HEIGHT_V2;
