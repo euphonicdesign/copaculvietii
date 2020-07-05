@@ -123,6 +123,8 @@ var CULOARE_MASCA = "white";
 
 var GROSIME_LINIE_METODA_PROTECTIE = 6;
 var RAZA_CERC_METODA_PROTECTIE = 10;
+var RAZA_CERC_METODA_PROTECTIE_MASCA = 8;
+var GROSIME_LINIE_METODA_PROTECTIE_MASCA = 8;
 
 //retea tuburi
 var vector_tuburi = [];
@@ -772,7 +774,13 @@ function jeton(raza, culoare, x, y, tip) {
         if(this.tip === TIP_CERC){
 
             //desenare jeton
-            ctx.fillStyle = this.culoare_stare_frunza;
+            if(this.penetrat == false && this.metoda_preventie == METODA_PREVENTIE_MASCA){
+                ctx.fillStyle = CULOARE_MASCA;
+            }
+            else{
+                ctx.fillStyle = this.culoare_stare_frunza;
+            }
+
             ctx.strokeStyle = CULOARE_MARGINE_JETON;
             //ctx.strokeStyle = this.culoare_stare_frunza;
             ctx.lineWidth = grosime_margine_jeton;
@@ -815,14 +823,14 @@ function jeton(raza, culoare, x, y, tip) {
               else if(this.metoda_preventie == METODA_PREVENTIE_MASCA){
                   ctx.fillStyle = CULOARE_MASCA;
                   ctx.strokeStyle = CULOARE_MASCA;
-                  ctx.lineWidth = GROSIME_LINIE_METODA_PROTECTIE;
+                  ctx.lineWidth = GROSIME_LINIE_METODA_PROTECTIE_MASCA;
                   ctx.beginPath();
                   //ctx.arc(this.x+this.w/2, this.y+this.h/2, this.w/2, Math.PI/2, 3*Math.PI/2, true);
-                  ctx.arc(this.x, this.y, RAZA_CERC_METODA_PROTECTIE, 0, Math.PI*2, false);
-                  //ctx.arc(this.x+this.w/2, this.y+this.h/2, RAZA_CERC_METODA_PROTECTIE, 0, Math.PI*2, false);
+                  ctx.arc(this.x, this.y, RAZA_CERC_METODA_PROTECTIE_MASCA, 0, Math.PI*2, false);
+                  //ctx.arc(this.x+this.raza/2, this.y+this.raza/2, RAZA_CERC_METODA_PROTECTIE, 0, Math.PI*2, false);
                   //ctx.lineTo(this.x+this.w/2, this.y+this.h/2);
                   ctx.closePath();
-                  ctx.fill();
+                  //ctx.fill();
                   ctx.stroke();
               }
 
