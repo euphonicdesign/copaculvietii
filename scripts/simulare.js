@@ -321,6 +321,10 @@ function actionareButoane(i){
             actualizareProcenteDistributieProtectie(TIP_PROTECTIE_ACASA, TIP_OPERATIE_DECREMENTARE);
         }
     }
+
+    //salvare preferinte valori protectii
+    localStorage.setItem('mask_percentage_v2', PROCENT_DISTRIBUTIE_MASCA);
+    localStorage.setItem('home_percentage_v2', PROCENT_DISTRIBUTIE_ACASA);
 }
 
 
