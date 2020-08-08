@@ -322,15 +322,11 @@ function actionareButoane(i){
         }
     }
 
+    //console.log("setare local storage");
     //salvare preferinte valori protectii
     localStorage.setItem('mask_percentage_v2', PROCENT_DISTRIBUTIE_MASCA);
     localStorage.setItem('home_percentage_v2', PROCENT_DISTRIBUTIE_ACASA);
 }
-
-
-//salvare preferinte valori protectii
-localStorage.setItem('mask_percentage_v2', PROCENT_DISTRIBUTIE_MASCA);
-localStorage.setItem('home_percentage_v2', PROCENT_DISTRIBUTIE_ACASA);
 
 function restart(){
   location.reload();
