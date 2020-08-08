@@ -272,6 +272,62 @@ var TEXT_LEGENDA_ACASA = TEXT_LEGENDA_ACASA_RO;
 const input = document.querySelector('html');
 input.onkeydown = trimiteComenziJoc;
 
+function schimbareProcentMasca(increment){
+  if(increment == 1){
+    //console.log("increment masca pozitiv");
+    actionareButoane(1); // index 1: masca +
+  }
+  else{
+    //console.log("increment masca negativ");
+    actionareButoane(0); // index 0: masca -
+  }
+}
+
+function schimbareProcentAcasa(increment){
+  if(increment == 1){
+    //console.log("increment acasa pozitiv");
+    actionareButoane(3); // index 3: acasa +
+  }
+  else{
+    //console.log("increment acasa negativ");
+    actionareButoane(2); // index 2: acasa -
+  }
+}
+
+function actionareButoane(i){
+    vector_butoane[i].afisaj.schimbat_recent = true;
+    vector_butoane[i].afisaj.start_timer = true;
+
+    if (vector_butoane[i].tip_buton == TIP_BUTON_PLUS){
+        //console.log("buton +");
+        if(vector_butoane[i].afisaj.afisaj_variabila == AFISAJ_VARIABILA_MASCA){
+              //PROCENT_DISTRIBUTIE_MASCA += INCREMENT_BUTON;
+              actualizareProcenteDistributieProtectie(TIP_PROTECTIE_MASCA, TIP_OPERATIE_INCREMENTARE);
+            //console.log("PROCENT_DISTRIBUTIE_MASCA " + PROCENT_DISTRIBUTIE_MASCA);
+        }
+        else if(vector_butoane[i].afisaj.afisaj_variabila == AFISAJ_VARIABILA_ACASA){
+            //PROCENT_DISTRIBUTIE_ACASA += INCREMENT_BUTON;
+            actualizareProcenteDistributieProtectie(TIP_PROTECTIE_ACASA, TIP_OPERATIE_INCREMENTARE);
+        }
+    }
+    else if (vector_butoane[i].tip_buton == TIP_BUTON_MINUS){
+        //console.log("buton -");
+        if(vector_butoane[i].afisaj.afisaj_variabila == AFISAJ_VARIABILA_MASCA){
+            //PROCENT_DISTRIBUTIE_MASCA -= INCREMENT_BUTON;
+            actualizareProcenteDistributieProtectie(TIP_PROTECTIE_MASCA, TIP_OPERATIE_DECREMENTARE);
+        }
+        else if(vector_butoane[i].afisaj.afisaj_variabila == AFISAJ_VARIABILA_ACASA){
+            //PROCENT_DISTRIBUTIE_ACASA -= INCREMENT_BUTON;
+            actualizareProcenteDistributieProtectie(TIP_PROTECTIE_ACASA, TIP_OPERATIE_DECREMENTARE);
+        }
+    }
+}
+
+
+//salvare preferinte valori protectii
+localStorage.setItem('mask_percentage_v2', PROCENT_DISTRIBUTIE_MASCA);
+localStorage.setItem('home_percentage_v2', PROCENT_DISTRIBUTIE_ACASA);
+
 function restart(){
   location.reload();
   return false;
