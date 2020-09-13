@@ -230,7 +230,7 @@ var LIMBA_ROMANA = 1;
 var LIMBA_SELECTATA = LIMBA_ROMANA;
 
 //TEXT LIMBI
-var TEXT_TITLU_RO = "Copacul Vietii";
+var TEXT_TITLU_RO = "Copacul Vieții";
 var TEXT_TITLU_EN = "The Tree of Life";
 var TEXT_ZILE_TRECUTE_RO = "Ziua";
 var TEXT_ZILE_TRECUTE_EN = "Day";
@@ -248,9 +248,9 @@ var TEXT_LEGENDA_MASCA_EN_V1 = "cover layer";
 var TEXT_LEGENDA_ACASA_RO_V1 = "strat acasa";
 var TEXT_LEGENDA_ACASA_EN_V1 = "home layer";
 
-var TEXT_LEGENDA_MASCA_RO_V2 = "masca";
+var TEXT_LEGENDA_MASCA_RO_V2 = "mască";
 var TEXT_LEGENDA_MASCA_EN_V2 = "mask";
-var TEXT_LEGENDA_ACASA_RO_V2 = "acasa";
+var TEXT_LEGENDA_ACASA_RO_V2 = "acasă";
 var TEXT_LEGENDA_ACASA_EN_V2 = "home";
 
 var TEXT_LEGENDA_MASCA_RO = TEXT_LEGENDA_MASCA_RO_V1;
@@ -1866,7 +1866,7 @@ function actualizareLimba(){
     TEXT_LEGENDA_ACASA = TEXT_LEGENDA_ACASA_RO;
 
     titlu.textContent = TEXT_TITLU;
-    link_pauza.textContent = "Pauza";
+    link_pauza.textContent = "Pauză";
   }
 }
 
